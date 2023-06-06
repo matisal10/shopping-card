@@ -35,12 +35,10 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
         const existingItem = updatedItems[existingItemIndex];
         const updatedItem = { ...existingItem, quantity: existingItem.quantity + 1 };
         updatedItems[existingItemIndex] = updatedItem;
-        // setTotal((prevTotal) => prevTotal + product.price); // Actualizar el total al sumar el precio del producto
         return updatedItems;
       } else {
         // Añadir un nuevo producto al carrito
         const newItem = { id: product.id, quantity: 1 };
-        // setTotal((prevTotal) => prevTotal + product.price); // Actualizar el total al sumar el precio del producto
         return [...prevItems, newItem];
       }
     });
